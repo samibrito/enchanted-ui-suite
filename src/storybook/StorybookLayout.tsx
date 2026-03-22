@@ -31,6 +31,7 @@ const sections: Section[] = [
 interface StorybookLayoutProps {
   activeSection: string;
   onSectionChange: (id: string) => void;
+  children: React.ReactNode;
 }
 
 const StorybookLayout: React.FC<StorybookLayoutProps> = ({ activeSection, onSectionChange, children }) => {
