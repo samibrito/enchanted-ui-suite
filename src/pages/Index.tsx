@@ -1,16 +1,44 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React, { useState } from 'react';
+import StorybookLayout from '../storybook/StorybookLayout';
+import OverviewSection from '../storybook/sections/OverviewSection';
+import ColorsSection from '../storybook/sections/ColorsSection';
+import TypographySection from '../storybook/sections/TypographySection';
+import IconsSection from '../storybook/sections/IconsSection';
+import ButtonsSection from '../storybook/sections/ButtonsSection';
+import FormsSection from '../storybook/sections/FormsSection';
+import CardsSection from '../storybook/sections/CardsSection';
+import TablesSection from '../storybook/sections/TablesSection';
+import BadgesSection from '../storybook/sections/BadgesSection';
+import AlertsSection from '../storybook/sections/AlertsSection';
+import NavigationSection from '../storybook/sections/NavigationSection';
+import DataDisplaySection from '../storybook/sections/DataDisplaySection';
+import LayoutSection from '../storybook/sections/LayoutSection';
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
-  return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
-  );
+const sectionComponents: Record<string, React.FC> = {
+  overview: OverviewSection,
+  colors: ColorsSection,
+  typography: TypographySection,
+  icons: IconsSection,
+  buttons: ButtonsSection,
+  forms: FormsSection,
+  cards: CardsSection,
+  tables: TablesSection,
+  badges: BadgesSection,
+  alerts: AlertsSection,
+  navigation: NavigationSection,
+  dataDisplay: DataDisplaySection,
+  layout: LayoutSection,
 };
 
-const Index = PlaceholderIndex;
+const Index: React.FC = () => {
+  const [activeSection, setActiveSection] = useState('overview');
+  const SectionComponent = sectionComponents[activeSection] || OverviewSection;
+
+  return (
+    <StorybookLayout activeSection={activeSection} onSectionChange={setActiveSection}>
+      <SectionComponent />
+    </StorybookLayout>
+  );
+};
 
 export default Index;
