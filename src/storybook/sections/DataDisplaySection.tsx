@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUp, ArrowDown, Clock, CheckCircle, Package, Truck } from '@phosphor-icons/react';
+import CodePreview from '../components/CodePreview';
 
 const DataDisplaySection: React.FC = () => (
   <div>
@@ -35,6 +36,19 @@ const DataDisplaySection: React.FC = () => (
           </div>
         </div>
       </div>
+      <CodePreview code={`<!-- Avatar sizes -->
+<div class="sb-avatar sb-avatar-sm">SM</div>
+<div class="sb-avatar">MD</div>
+<div class="sb-avatar sb-avatar-lg">LG</div>
+<div class="sb-avatar sb-avatar-xl">XL</div>
+
+<!-- Avatar Stack -->
+<div style="display: flex">
+  <div class="sb-avatar sb-avatar-sm" style="border: 2px solid hsl(var(--card))">AB</div>
+  <div class="sb-avatar sb-avatar-sm" style="margin-left: -8px; border: 2px solid hsl(var(--card))">CD</div>
+  <div class="sb-avatar sb-avatar-sm" style="margin-left: -8px; border: 2px solid hsl(var(--card))">EF</div>
+  <div class="sb-avatar sb-avatar-sm" style="margin-left: -8px">+5</div>
+</div>`} />
     </div>
 
     <div className="sb-component-section">
@@ -55,6 +69,18 @@ const DataDisplaySection: React.FC = () => (
           ))}
         </div>
       </div>
+      <CodePreview code={`<div class="sb-timeline">
+  <div class="sb-timeline-item">
+    <div class="sb-timeline-time">2 hours ago</div>
+    <div class="sb-timeline-title">Deployment completed</div>
+    <div class="sb-timeline-desc">Version 2.4.1 deployed to production.</div>
+  </div>
+  <div class="sb-timeline-item">
+    <div class="sb-timeline-time">5 hours ago</div>
+    <div class="sb-timeline-title">Code review approved</div>
+    <div class="sb-timeline-desc">PR #847 — Refactor authentication.</div>
+  </div>
+</div>`} />
     </div>
 
     <div className="sb-component-section">
@@ -82,6 +108,16 @@ const DataDisplaySection: React.FC = () => (
           </div>
         </div>
       </div>
+      <CodePreview code={`<!-- Key-Value pair -->
+<div style="display: flex; justify-content: space-between; padding: 0.625rem 0; border-bottom: 1px solid hsl(var(--border))">
+  <span style="color: hsl(var(--muted-foreground))">Full Name</span>
+  <span style="font-weight: 500">Carolina Silva Mendes</span>
+</div>
+
+<div style="display: flex; justify-content: space-between; padding: 0.625rem 0; border-bottom: 1px solid hsl(var(--border))">
+  <span style="color: hsl(var(--muted-foreground))">Email</span>
+  <span style="font-weight: 500">carolina@company.com</span>
+</div>`} />
     </div>
 
     <div className="sb-component-section">
@@ -94,6 +130,16 @@ const DataDisplaySection: React.FC = () => (
           <button className="btn btn-primary btn-sm" style={{ marginTop: '1rem' }}>Create Project</button>
         </div>
       </div>
+      <CodePreview code={`<div class="sb-empty-state">
+  <div class="sb-empty-icon">
+    <svg><!-- icon --></svg>
+  </div>
+  <div class="sb-empty-title">No projects yet</div>
+  <div class="sb-empty-desc">Create your first project to get started.</div>
+  <button class="btn btn-primary btn-sm" style="margin-top: 1rem">
+    Create Project
+  </button>
+</div>`} />
     </div>
   </div>
 );

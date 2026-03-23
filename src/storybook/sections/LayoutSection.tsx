@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, CaretDown, CaretUp } from '@phosphor-icons/react';
+import CodePreview from '../components/CodePreview';
 
 const LayoutSection: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -43,6 +44,24 @@ const LayoutSection: React.FC = () => {
             </>
           )}
         </div>
+        <CodePreview code={`<!-- Modal Backdrop -->
+<div class="modal-backdrop">
+  <div class="modal-content" style="max-width: 480px">
+    <div class="modal-header">
+      <h5 class="modal-title">Confirm Action</h5>
+      <button class="btn btn-ghost btn-icon btn-sm">
+        <svg><!-- close icon --></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      Are you sure you want to proceed?
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost">Cancel</button>
+      <button class="btn btn-danger">Delete</button>
+    </div>
+  </div>
+</div>`} />
       </div>
 
       <div className="sb-component-section">
@@ -78,6 +97,16 @@ const LayoutSection: React.FC = () => {
             </div>
           ))}
         </div>
+        <CodePreview code={`<!-- Accordion item -->
+<div style="border-bottom: 1px solid hsl(var(--border))">
+  <button style="width: 100%; display: flex; justify-content: space-between; padding: 1rem 1.25rem; background: none; border: none; font-weight: 500; cursor: pointer">
+    What is included in the free plan?
+    <svg><!-- caret icon --></svg>
+  </button>
+  <div style="padding: 0 1.25rem 1rem; color: hsl(var(--muted-foreground))">
+    The free plan includes up to 3 projects, 1GB storage, and basic analytics.
+  </div>
+</div>`} />
       </div>
 
       <div className="sb-component-section">
@@ -98,6 +127,18 @@ const LayoutSection: React.FC = () => {
             </div>
           </div>
         </div>
+        <CodePreview code={`<div class="dropdown">
+  <button class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+    Actions
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Edit</a>
+    <a class="dropdown-item" href="#">Duplicate</a>
+    <a class="dropdown-item" href="#">Archive</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item text-danger" href="#">Delete</a>
+  </div>
+</div>`} />
       </div>
 
       <div className="sb-component-section">
@@ -113,6 +154,15 @@ const LayoutSection: React.FC = () => {
           </div>
           <p style={{ fontSize: '0.875rem', color: 'hsl(var(--muted-foreground))' }}>Content with labeled divider.</p>
         </div>
+        <CodePreview code={`<!-- Simple divider -->
+<div class="sb-divider"></div>
+
+<!-- Labeled divider -->
+<div style="display: flex; align-items: center; gap: 1rem; margin: 1.5rem 0">
+  <div style="flex: 1; height: 1px; background: hsl(var(--border))"></div>
+  <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em">or</span>
+  <div style="flex: 1; height: 1px; background: hsl(var(--border))"></div>
+</div>`} />
       </div>
 
       <div className="sb-component-section">
@@ -134,6 +184,20 @@ const LayoutSection: React.FC = () => {
             ))}
           </div>
         </div>
+        <CodePreview code={`<!-- Keyboard shortcut row -->
+<div style="display: flex; justify-content: space-between">
+  <span>Command palette</span>
+  <div>
+    <kbd>⌘</kbd> <kbd>K</kbd>
+  </div>
+</div>
+
+<div style="display: flex; justify-content: space-between">
+  <span>Save changes</span>
+  <div>
+    <kbd>⌘</kbd> <kbd>S</kbd>
+  </div>
+</div>`} />
       </div>
     </div>
   );

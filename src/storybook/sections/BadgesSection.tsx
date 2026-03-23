@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, Circle, Lightning, Star, CheckCircle } from '@phosphor-icons/react';
+import CodePreview from '../components/CodePreview';
 
 const BadgesSection: React.FC = () => (
   <div>
@@ -20,6 +21,12 @@ const BadgesSection: React.FC = () => (
           <span className="badge badge-secondary">Secondary</span>
         </div>
       </div>
+      <CodePreview code={`<span class="badge badge-primary">Primary</span>
+<span class="badge badge-success">Success</span>
+<span class="badge badge-danger">Danger</span>
+<span class="badge badge-warning">Warning</span>
+<span class="badge badge-info">Info</span>
+<span class="badge badge-secondary">Secondary</span>`} />
     </div>
 
     <div className="sb-component-section">
@@ -33,6 +40,18 @@ const BadgesSection: React.FC = () => (
           <span className="badge badge-success"><Circle size={8} weight="fill" /> Online</span>
         </div>
       </div>
+      <CodePreview code={`<span class="badge badge-success">
+  <svg><!-- check icon --></svg> Verified
+</span>
+<span class="badge badge-warning">
+  <svg><!-- lightning icon --></svg> Trending
+</span>
+<span class="badge badge-danger">
+  <svg><!-- dot icon --></svg> Offline
+</span>
+<span class="badge badge-success">
+  <svg><!-- dot icon --></svg> Online
+</span>`} />
     </div>
 
     <div className="sb-component-section">
@@ -47,6 +66,19 @@ const BadgesSection: React.FC = () => (
           ))}
         </div>
       </div>
+      <CodePreview code={`<span class="sb-tag">
+  React
+  <span class="sb-tag-remove">
+    <svg><!-- x icon --></svg>
+  </span>
+</span>
+
+<span class="sb-tag">
+  TypeScript
+  <span class="sb-tag-remove">
+    <svg><!-- x icon --></svg>
+  </span>
+</span>`} />
     </div>
 
     <div className="sb-component-section">
@@ -66,6 +98,20 @@ const BadgesSection: React.FC = () => (
           ))}
         </div>
       </div>
+      <CodePreview code={`<div style="display: flex; align-items: center; justify-content: space-between">
+  <span>Deployment complete</span>
+  <span class="badge badge-success">Success</span>
+</div>
+
+<div style="display: flex; align-items: center; justify-content: space-between">
+  <span>Build in progress</span>
+  <span class="badge badge-warning">Running</span>
+</div>
+
+<div style="display: flex; align-items: center; justify-content: space-between">
+  <span>Pipeline failed</span>
+  <span class="badge badge-danger">Failed</span>
+</div>`} />
     </div>
   </div>
 );

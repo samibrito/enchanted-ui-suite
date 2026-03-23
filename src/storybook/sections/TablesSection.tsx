@@ -1,5 +1,6 @@
 import React from 'react';
 import { PencilSimple, Trash, DotsThree } from '@phosphor-icons/react';
+import CodePreview from '../components/CodePreview';
 
 const data = [
   { name: 'Ana Rodrigues', email: 'ana@company.com', role: 'Admin', status: 'Active', amount: '$2,340' },
@@ -60,6 +61,40 @@ const TablesSection: React.FC = () => (
           </tbody>
         </table>
       </div>
+      <CodePreview code={`<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Status</th>
+      <th>Revenue</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div style="display: flex; align-items: center; gap: 0.625rem">
+          <div class="sb-avatar sb-avatar-sm">AR</div>
+          <span style="font-weight: 500">Ana Rodrigues</span>
+        </div>
+      </td>
+      <td>ana@company.com</td>
+      <td><span class="sb-tag">Admin</span></td>
+      <td><span class="badge badge-success">Active</span></td>
+      <td>$2,340</td>
+      <td>
+        <button class="btn btn-ghost btn-icon btn-sm">
+          <svg><!-- edit icon --></svg>
+        </button>
+        <button class="btn btn-ghost btn-icon btn-sm">
+          <svg><!-- delete icon --></svg>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>`} />
     </div>
 
     <div className="sb-component-section">
@@ -93,6 +128,26 @@ const TablesSection: React.FC = () => (
           </tbody>
         </table>
       </div>
+      <CodePreview code={`<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Product</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Wireless Headphones</td>
+      <td><span class="badge badge-secondary">Electronics</span></td>
+      <td>$89.99</td>
+      <td>234</td>
+    </tr>
+  </tbody>
+</table>`} />
     </div>
   </div>
 );

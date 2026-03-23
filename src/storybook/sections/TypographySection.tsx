@@ -1,4 +1,5 @@
 import React from 'react';
+import CodePreview from '../components/CodePreview';
 
 const TypographySection: React.FC = () => (
   <div>
@@ -28,18 +29,22 @@ const TypographySection: React.FC = () => (
             <span style={{
               fontSize: '0.6875rem', fontFamily: 'monospace',
               color: 'hsl(var(--muted-foreground))', width: 60, flexShrink: 0
-            }}>
-              {t.tag}
-            </span>
+            }}>{t.tag}</span>
             <span style={{
               fontSize: t.size, fontWeight: t.weight, letterSpacing: t.tracking,
               lineHeight: 1.3, textTransform: t.tag === 'overline' ? 'uppercase' : undefined
-            }}>
-              {t.label}
-            </span>
+            }}>{t.label}</span>
           </div>
         ))}
       </div>
+      <CodePreview code={`<h1 style="font-size: 2rem; font-weight: 700; letter-spacing: -0.03em">Heading 1</h1>
+<h2 style="font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em">Heading 2</h2>
+<h3 style="font-size: 1.25rem; font-weight: 600">Heading 3</h3>
+<h4 style="font-size: 1.0625rem; font-weight: 600">Heading 4</h4>
+<p style="font-size: 0.875rem">Body text</p>
+<small style="font-size: 0.8125rem">Small text</small>
+<span style="font-size: 0.75rem; font-weight: 500">Caption</span>
+<span style="font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase">OVERLINE</span>`} />
     </div>
 
     <div className="sb-component-section">

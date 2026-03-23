@@ -1,5 +1,6 @@
 import React from 'react';
 import { MagnifyingGlass, Eye, EnvelopeSimple, Lock, User, CalendarBlank, CurrencyDollar } from '@phosphor-icons/react';
+import CodePreview from '../components/CodePreview';
 
 const FormsSection: React.FC = () => (
   <div>
@@ -31,6 +32,26 @@ const FormsSection: React.FC = () => (
           </div>
         </div>
       </div>
+      <CodePreview code={`<div class="form-group">
+  <label>Full Name</label>
+  <input type="text" class="form-control" placeholder="Enter your name" />
+  <small class="form-text">Your legal name as it appears on documents.</small>
+</div>
+
+<div class="form-group">
+  <label>Email Address</label>
+  <input type="email" class="form-control" placeholder="you@company.com" />
+</div>
+
+<div class="form-group">
+  <label>Password</label>
+  <input type="password" class="form-control" placeholder="••••••••" />
+</div>
+
+<div class="form-group">
+  <label>Disabled</label>
+  <input type="text" class="form-control" disabled value="Cannot edit" />
+</div>`} />
     </div>
 
     <div className="sb-component-section">
@@ -49,6 +70,13 @@ const FormsSection: React.FC = () => (
           </div>
         </div>
       </div>
+      <CodePreview code={`<!-- Valid -->
+<input type="text" class="form-control is-valid" value="john@example.com" />
+<div class="valid-feedback">Looks good!</div>
+
+<!-- Invalid -->
+<input type="text" class="form-control is-invalid" value="not-an-email" />
+<div class="invalid-feedback">Please enter a valid email.</div>`} />
     </div>
 
     <div className="sb-component-section">
@@ -65,7 +93,7 @@ const FormsSection: React.FC = () => (
           <div className="col-md-6 mb-3">
             <label>Amount</label>
             <div className="input-group">
-              <div className="input-group-prepend"><span className="input-group-text"><CurrencyDollar size={16} /></span></div>
+              <div className="input-group-prepend"><span className="input-group-text">$</span></div>
               <input type="number" className="form-control" placeholder="0.00" />
               <div className="input-group-append"><span className="input-group-text">USD</span></div>
             </div>
@@ -86,6 +114,32 @@ const FormsSection: React.FC = () => (
           </div>
         </div>
       </div>
+      <CodePreview code={`<!-- Search with icon -->
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text"><svg><!-- search icon --></svg></span>
+  </div>
+  <input type="text" class="form-control" placeholder="Search..." />
+</div>
+
+<!-- Amount with prefix and suffix -->
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">$</span>
+  </div>
+  <input type="number" class="form-control" placeholder="0.00" />
+  <div class="input-group-append">
+    <span class="input-group-text">USD</span>
+  </div>
+</div>
+
+<!-- URL prefix -->
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">https://</span>
+  </div>
+  <input type="text" class="form-control" placeholder="yoursite.com" />
+</div>`} />
     </div>
 
     <div className="sb-component-section">
@@ -113,6 +167,13 @@ const FormsSection: React.FC = () => (
           </div>
         </div>
       </div>
+      <CodePreview code={`<label>Country</label>
+<select class="custom-select">
+  <option>Select a country...</option>
+  <option>Brazil</option>
+  <option>United States</option>
+  <option>Portugal</option>
+</select>`} />
     </div>
 
     <div className="sb-component-section">
@@ -126,6 +187,9 @@ const FormsSection: React.FC = () => (
           </div>
         </div>
       </div>
+      <CodePreview code={`<label>Description</label>
+<textarea class="form-control" rows="4" placeholder="Write a detailed description..."></textarea>
+<small class="form-text">Max 500 characters.</small>`} />
     </div>
 
     <div className="sb-component-section">
@@ -164,6 +228,23 @@ const FormsSection: React.FC = () => (
           </div>
         </div>
       </div>
+      <CodePreview code={`<!-- Checkbox -->
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="ck1" checked />
+  <label class="custom-control-label" for="ck1">Email notifications</label>
+</div>
+
+<!-- Disabled checkbox -->
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="ck3" disabled />
+  <label class="custom-control-label" for="ck3">SMS alerts (coming soon)</label>
+</div>
+
+<!-- Radio -->
+<div class="custom-control custom-radio">
+  <input type="radio" class="custom-control-input" name="plan" id="r1" checked />
+  <label class="custom-control-label" for="r1">Free</label>
+</div>`} />
     </div>
 
     <div className="sb-component-section">
@@ -184,6 +265,15 @@ const FormsSection: React.FC = () => (
           </div>
         </div>
       </div>
+      <CodePreview code={`<div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="sw1" checked />
+  <label class="custom-control-label" for="sw1">Dark mode</label>
+</div>
+
+<div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="sw2" />
+  <label class="custom-control-label" for="sw2">Notifications</label>
+</div>`} />
     </div>
 
     <div className="sb-component-section">
@@ -200,6 +290,8 @@ const FormsSection: React.FC = () => (
           </div>
         </div>
       </div>
+      <CodePreview code={`<label>Volume</label>
+<input type="range" min="0" max="100" value="65" />`} />
     </div>
 
     <div className="sb-component-section">
@@ -239,6 +331,37 @@ const FormsSection: React.FC = () => (
           </div>
         </form>
       </div>
+      <CodePreview code={`<form>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label>First Name</label>
+      <input type="text" class="form-control" placeholder="Maria" />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label>Last Name</label>
+      <input type="text" class="form-control" placeholder="Santos" />
+    </div>
+  </div>
+  <div class="mb-3">
+    <label>Email</label>
+    <input type="email" class="form-control" placeholder="maria@company.com" />
+  </div>
+  <div class="mb-3">
+    <label>Department</label>
+    <select class="custom-select">
+      <option>Select...</option>
+      <option>Engineering</option>
+      <option>Design</option>
+      <option>Marketing</option>
+    </select>
+  </div>
+  <div class="custom-control custom-checkbox mb-3">
+    <input type="checkbox" class="custom-control-input" id="agree" />
+    <label class="custom-control-label" for="agree">I agree to the terms</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="button" class="btn btn-ghost">Cancel</button>
+</form>`} />
     </div>
   </div>
 );

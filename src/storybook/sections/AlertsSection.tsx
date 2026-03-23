@@ -1,5 +1,6 @@
 import React from 'react';
 import { Info, CheckCircle, Warning, XCircle, Bell } from '@phosphor-icons/react';
+import CodePreview from '../components/CodePreview';
 
 const AlertsSection: React.FC = () => (
   <div>
@@ -16,6 +17,25 @@ const AlertsSection: React.FC = () => (
         <div className="alert alert-warning"><Warning size={18} weight="fill" /><div><strong>Warning.</strong> Your trial expires in 3 days. Upgrade now.</div></div>
         <div className="alert alert-danger"><XCircle size={18} weight="fill" /><div><strong>Error.</strong> Failed to process payment. Please try again.</div></div>
       </div>
+      <CodePreview code={`<div class="alert alert-info">
+  <svg><!-- info icon --></svg>
+  <div><strong>Information.</strong> A new update is available.</div>
+</div>
+
+<div class="alert alert-success">
+  <svg><!-- check icon --></svg>
+  <div><strong>Success!</strong> Changes saved successfully.</div>
+</div>
+
+<div class="alert alert-warning">
+  <svg><!-- warning icon --></svg>
+  <div><strong>Warning.</strong> Your trial expires in 3 days.</div>
+</div>
+
+<div class="alert alert-danger">
+  <svg><!-- error icon --></svg>
+  <div><strong>Error.</strong> Failed to process payment.</div>
+</div>`} />
     </div>
 
     <div className="sb-component-section">
@@ -40,6 +60,29 @@ const AlertsSection: React.FC = () => (
           ))}
         </div>
       </div>
+      <CodePreview code={`<!-- Default Progress -->
+<div class="progress">
+  <div class="progress-bar" style="width: 73%"></div>
+</div>
+
+<!-- Success variant -->
+<div class="progress">
+  <div class="progress-bar bg-success" style="width: 45%"></div>
+</div>
+
+<!-- Danger variant -->
+<div class="progress">
+  <div class="progress-bar bg-danger" style="width: 89%"></div>
+</div>
+
+<!-- With label -->
+<div style="display: flex; justify-content: space-between; margin-bottom: 0.375rem">
+  <span>Storage Used</span>
+  <span>73%</span>
+</div>
+<div class="progress">
+  <div class="progress-bar" style="width: 73%"></div>
+</div>`} />
     </div>
 
     <div className="sb-component-section">
@@ -60,6 +103,23 @@ const AlertsSection: React.FC = () => (
           </div>
         </div>
       </div>
+      <CodePreview code={`<!-- Success Toast -->
+<div class="sb-toast">
+  <svg><!-- check icon --></svg>
+  <div>
+    <div style="font-weight: 600">Saved successfully</div>
+    <div>Your project settings have been updated.</div>
+  </div>
+</div>
+
+<!-- Error Toast -->
+<div class="sb-toast">
+  <svg><!-- error icon --></svg>
+  <div>
+    <div style="font-weight: 600">Connection failed</div>
+    <div>Unable to reach the server.</div>
+  </div>
+</div>`} />
     </div>
 
     <div className="sb-component-section">
@@ -73,6 +133,17 @@ const AlertsSection: React.FC = () => (
           </button>
         </div>
       </div>
+      <CodePreview code={`<!-- Small spinner -->
+<div class="spinner-border spinner-border-sm" role="status"></div>
+
+<!-- Default spinner -->
+<div class="spinner-border" role="status"></div>
+
+<!-- Button with spinner -->
+<button class="btn btn-primary" disabled>
+  <span class="spinner-border spinner-border-sm" role="status"></span>
+  Processing...
+</button>`} />
     </div>
 
     <div className="sb-component-section">
@@ -87,6 +158,15 @@ const AlertsSection: React.FC = () => (
           </div>
         </div>
       </div>
+      <CodePreview code={`<!-- Skeleton with avatar -->
+<div style="display: flex; gap: 0.75rem">
+  <div class="sb-skeleton" style="width: 40px; height: 40px; border-radius: 50%"></div>
+  <div style="flex: 1">
+    <div class="sb-skeleton" style="width: 40%; height: 14px; margin-bottom: 8px"></div>
+    <div class="sb-skeleton" style="width: 80%; height: 12px; margin-bottom: 6px"></div>
+    <div class="sb-skeleton" style="width: 60%; height: 12px"></div>
+  </div>
+</div>`} />
     </div>
   </div>
 );
