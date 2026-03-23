@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   House, Cube, TextAa, ToggleRight, Table as TableIcon,
   ListBullets, ChartBar, Bell, NavigationArrow, Cards,
-  PaintBucket, Diamond, ArrowsHorizontal, List, X, MagnifyingGlass
+  PaintBucket, Diamond, ArrowsHorizontal, List, X, MagnifyingGlass,
+  CursorClick, Play, Moon, Sun
 } from '@phosphor-icons/react';
 
 interface Section {
