@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Heart, ChatCircle, Share, MapPin, Clock, Star, DotsThree } from '@phosphor-icons/react';
+import CodePreview from '../components/CodePreview';
 
 const CardsSection: React.FC = () => (
   <div>
@@ -43,6 +44,34 @@ const CardsSection: React.FC = () => (
           </div>
         </div>
       </div>
+      <CodePreview code={`<!-- Simple Card -->
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Simple Card</h5>
+    <p class="card-text">A basic card with just a body.</p>
+    <button class="btn btn-primary btn-sm">Action</button>
+  </div>
+</div>
+
+<!-- Card with Header & Footer -->
+<div class="card">
+  <div class="card-header">With Header</div>
+  <div class="card-body">
+    <p class="card-text">Content here.</p>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-ghost btn-sm">Dismiss</button>
+    <button class="btn btn-primary btn-sm">Confirm</button>
+  </div>
+</div>
+
+<!-- Accent Border Card -->
+<div class="card" style="border-left: 3px solid hsl(var(--primary))">
+  <div class="card-body">
+    <h5 class="card-title">Accent Border</h5>
+    <p class="card-text">Left border accent.</p>
+  </div>
+</div>`} />
     </div>
 
     <div className="sb-component-section">
@@ -90,6 +119,31 @@ const CardsSection: React.FC = () => (
           </div>
         </div>
       </div>
+      <CodePreview code={`<!-- Centered Profile Card -->
+<div class="card" style="text-align: center">
+  <div class="card-body">
+    <div class="sb-avatar sb-avatar-xl">CS</div>
+    <h5 class="card-title">Carolina Silva</h5>
+    <p>Product Designer</p>
+    <div>
+      <strong>147</strong> Projects
+      <strong>2.4k</strong> Followers
+    </div>
+  </div>
+</div>
+
+<!-- Horizontal Profile Card -->
+<div class="card">
+  <div class="card-body" style="display: flex; gap: 1rem">
+    <div class="sb-avatar sb-avatar-lg">RP</div>
+    <div>
+      <h5 class="card-title">Rafael Pereira</h5>
+      <p>São Paulo, BR · Engineering Lead</p>
+      <span class="sb-tag">React</span>
+      <span class="sb-tag">TypeScript</span>
+    </div>
+  </div>
+</div>`} />
     </div>
 
     <div className="sb-component-section">
@@ -125,6 +179,16 @@ const CardsSection: React.FC = () => (
           ))}
         </div>
       </div>
+      <CodePreview code={`<!-- Content Card with color accent -->
+<div class="card">
+  <div style="height: 4px; background: hsl(var(--primary)); border-radius: 0.75rem 0.75rem 0 0"></div>
+  <div class="card-body">
+    <span class="badge badge-secondary">Category</span>
+    <h5 class="card-title">Article Title</h5>
+    <p class="card-text">Brief description here.</p>
+    <span>5 min read</span>
+  </div>
+</div>`} />
     </div>
 
     <div className="sb-component-section">
@@ -149,6 +213,17 @@ const CardsSection: React.FC = () => (
           ))}
         </div>
       </div>
+      <CodePreview code={`<div class="sb-stat-card">
+  <div class="sb-stat-label">Total Revenue</div>
+  <div class="sb-stat-value">$48,293</div>
+  <div class="sb-stat-change positive">+12.5% vs last month</div>
+</div>
+
+<div class="sb-stat-card">
+  <div class="sb-stat-label">Bounce Rate</div>
+  <div class="sb-stat-value">24.1%</div>
+  <div class="sb-stat-change negative">-3.4% vs last month</div>
+</div>`} />
     </div>
   </div>
 );
