@@ -40,6 +40,17 @@ interface StorybookLayoutProps {
 const StorybookLayout: React.FC<StorybookLayoutProps> = ({ activeSection, onSectionChange, children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [search, setSearch] = useState('');
+  const [dark, setDark] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('sb-theme') === 'dark';
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', dark);
+    localStorage.setItem('sb-theme', dark ? 'dark' : 'light');
+  }, [dark]);
 
   const categories = [...new Set(sections.map(s => s.category))];
   const filtered = sections.filter(s => s.label.toLowerCase().includes(search.toLowerCase()));
