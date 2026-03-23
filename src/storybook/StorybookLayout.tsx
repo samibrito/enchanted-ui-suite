@@ -89,10 +89,18 @@ const StorybookLayout: React.FC<StorybookLayoutProps> = ({ activeSection, onSect
             <span style={{
               fontSize: '0.625rem', fontWeight: 500,
               background: 'hsl(var(--primary) / 0.2)', color: 'hsl(var(--primary))',
-              padding: '0.125rem 0.375rem', borderRadius: 4, marginLeft: 'auto'
+              padding: '0.125rem 0.375rem', borderRadius: 4
             }}>
               v4.0
             </span>
+            <button
+              onClick={() => setDark(d => !d)}
+              className="sb-theme-toggle"
+              style={{ marginLeft: 'auto', width: 24, height: 24, border: '1px solid hsl(220 14% 22%)', background: 'hsl(220 14% 18%)' }}
+              title={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {dark ? <Sun size={13} color="hsl(38, 92%, 50%)" /> : <Moon size={13} color="hsl(220, 10%, 70%)" />}
+            </button>
           </div>
           <div style={{ position: 'relative' }}>
             <MagnifyingGlass size={14} style={{ position: 'absolute', left: 8, top: 9, opacity: 0.5 }} />
