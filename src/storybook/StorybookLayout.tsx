@@ -18,6 +18,7 @@ const sections: Section[] = [
   { id: 'colors', label: 'Colors & Tokens', icon: <PaintBucket size={18} />, category: 'Foundation' },
   { id: 'typography', label: 'Typography', icon: <TextAa size={18} />, category: 'Foundation' },
   { id: 'icons', label: 'Icon Library', icon: <Diamond size={18} />, category: 'Foundation' },
+  { id: 'animations', label: 'Animations', icon: <Play size={18} />, category: 'Foundation' },
   { id: 'buttons', label: 'Buttons', icon: <Cube size={18} />, category: 'Components' },
   { id: 'forms', label: 'Forms & Inputs', icon: <ToggleRight size={18} />, category: 'Components' },
   { id: 'cards', label: 'Cards', icon: <Cards size={18} />, category: 'Components' },
@@ -26,6 +27,7 @@ const sections: Section[] = [
   { id: 'alerts', label: 'Alerts & Feedback', icon: <Bell size={18} />, category: 'Components' },
   { id: 'navigation', label: 'Navigation', icon: <NavigationArrow size={18} />, category: 'Components' },
   { id: 'dataDisplay', label: 'Data Display', icon: <ChartBar size={18} />, category: 'Components' },
+  { id: 'interactive', label: 'Interactive', icon: <CursorClick size={18} />, category: 'Components' },
   { id: 'layout', label: 'Layout & Misc', icon: <ArrowsHorizontal size={18} />, category: 'Components' },
 ];
 
