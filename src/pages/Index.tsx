@@ -4,6 +4,7 @@ import OverviewSection from '../storybook/sections/OverviewSection';
 import ColorsSection from '../storybook/sections/ColorsSection';
 import TypographySection from '../storybook/sections/TypographySection';
 import IconsSection from '../storybook/sections/IconsSection';
+import AnimationsSection from '../storybook/sections/AnimationsSection';
 import ButtonsSection from '../storybook/sections/ButtonsSection';
 import FormsSection from '../storybook/sections/FormsSection';
 import CardsSection from '../storybook/sections/CardsSection';
@@ -12,6 +13,7 @@ import BadgesSection from '../storybook/sections/BadgesSection';
 import AlertsSection from '../storybook/sections/AlertsSection';
 import NavigationSection from '../storybook/sections/NavigationSection';
 import DataDisplaySection from '../storybook/sections/DataDisplaySection';
+import InteractiveSection from '../storybook/sections/InteractiveSection';
 import LayoutSection from '../storybook/sections/LayoutSection';
 
 const sectionComponents: Record<string, React.FC> = {
@@ -19,6 +21,7 @@ const sectionComponents: Record<string, React.FC> = {
   colors: ColorsSection,
   typography: TypographySection,
   icons: IconsSection,
+  animations: AnimationsSection,
   buttons: ButtonsSection,
   forms: FormsSection,
   cards: CardsSection,
@@ -27,6 +30,7 @@ const sectionComponents: Record<string, React.FC> = {
   alerts: AlertsSection,
   navigation: NavigationSection,
   dataDisplay: DataDisplaySection,
+  interactive: InteractiveSection,
   layout: LayoutSection,
 };
 

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   House, Cube, TextAa, ToggleRight, Table as TableIcon,
   ListBullets, ChartBar, Bell, NavigationArrow, Cards,
-  PaintBucket, Diamond, ArrowsHorizontal, List, X, MagnifyingGlass
+  PaintBucket, Diamond, ArrowsHorizontal, List, X, MagnifyingGlass,
+  CursorClick, Play, Moon, Sun
 } from '@phosphor-icons/react';
 
 interface Section {
@@ -17,6 +18,7 @@ const sections: Section[] = [
   { id: 'colors', label: 'Colors & Tokens', icon: <PaintBucket size={18} />, category: 'Foundation' },
   { id: 'typography', label: 'Typography', icon: <TextAa size={18} />, category: 'Foundation' },
   { id: 'icons', label: 'Icon Library', icon: <Diamond size={18} />, category: 'Foundation' },
+  { id: 'animations', label: 'Animations', icon: <Play size={18} />, category: 'Foundation' },
   { id: 'buttons', label: 'Buttons', icon: <Cube size={18} />, category: 'Components' },
   { id: 'forms', label: 'Forms & Inputs', icon: <ToggleRight size={18} />, category: 'Components' },
   { id: 'cards', label: 'Cards', icon: <Cards size={18} />, category: 'Components' },
@@ -25,6 +27,7 @@ const sections: Section[] = [
   { id: 'alerts', label: 'Alerts & Feedback', icon: <Bell size={18} />, category: 'Components' },
   { id: 'navigation', label: 'Navigation', icon: <NavigationArrow size={18} />, category: 'Components' },
   { id: 'dataDisplay', label: 'Data Display', icon: <ChartBar size={18} />, category: 'Components' },
+  { id: 'interactive', label: 'Interactive', icon: <CursorClick size={18} />, category: 'Components' },
   { id: 'layout', label: 'Layout & Misc', icon: <ArrowsHorizontal size={18} />, category: 'Components' },
 ];
 
@@ -37,6 +40,17 @@ interface StorybookLayoutProps {
 const StorybookLayout: React.FC<StorybookLayoutProps> = ({ activeSection, onSectionChange, children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [search, setSearch] = useState('');
+  const [dark, setDark] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('sb-theme') === 'dark';
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', dark);
+    localStorage.setItem('sb-theme', dark ? 'dark' : 'light');
+  }, [dark]);
 
   const categories = [...new Set(sections.map(s => s.category))];
   const filtered = sections.filter(s => s.label.toLowerCase().includes(search.toLowerCase()));
@@ -75,10 +89,18 @@ const StorybookLayout: React.FC<StorybookLayoutProps> = ({ activeSection, onSect
             <span style={{
               fontSize: '0.625rem', fontWeight: 500,
               background: 'hsl(var(--primary) / 0.2)', color: 'hsl(var(--primary))',
-              padding: '0.125rem 0.375rem', borderRadius: 4, marginLeft: 'auto'
+              padding: '0.125rem 0.375rem', borderRadius: 4
             }}>
               v4.0
             </span>
+            <button
+              onClick={() => setDark(d => !d)}
+              className="sb-theme-toggle"
+              style={{ marginLeft: 'auto', width: 24, height: 24, border: '1px solid hsl(220 14% 22%)', background: 'hsl(220 14% 18%)' }}
+              title={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {dark ? <Sun size={13} color="hsl(38, 92%, 50%)" /> : <Moon size={13} color="hsl(220, 10%, 70%)" />}
+            </button>
           </div>
           <div style={{ position: 'relative' }}>
             <MagnifyingGlass size={14} style={{ position: 'absolute', left: 8, top: 9, opacity: 0.5 }} />
